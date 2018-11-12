@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-  resources :super_heros do
+  root to: 'super_heros#index'
+  resources :super_heros, except: [:index] do
     namespace :my do
       resources :bookings, only: [:create]
     end
