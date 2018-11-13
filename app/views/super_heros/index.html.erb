@@ -5,17 +5,27 @@
 </div>
 
 <div class="container">
-  <h1 id="h1cocktails">All our Super Heroes</h1>
+  <div class= "index-title">
+  <h1>All our Super Heroes</h1>
+  </div>
 
   <div class="card-group">
     <% @super_heros.each do |super_hero| %>
     <div class="col-md-4 col-sm-6">
       <div class="card" style="">
-        <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/Movies/2004/B001NAT07A_Catwoman_UXWB1._V142637731_RI_SX940_.jpg" alt="Card image cap">
+        <%= link_to image_tag("https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/Movies/2004/B001NAT07A_Catwoman_UXWB1._V142637731_RI_SX940_.jpg", :class => 'card-img-top'), super_hero %>
+
+
         <div class="card-body">
           <h5 class="card-title"><%= super_hero.name %></h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Show</a>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">💶 €<%= super_hero.price %></li>
+            <li class="list-group-item">🏠 <%= super_hero.address%></li>
+            <li class="list-group-item">⚡️ Power</li>
+            <br>
+          </ul>
+          <a><%= link_to 'Show', super_hero, class: 'btn btn-light btn-block'%></a>
         </div>
       </div>
     </div>
