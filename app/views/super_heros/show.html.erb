@@ -1,20 +1,51 @@
-<h2>
-  <%= @super_hero.name %>
-</h2>
-<h3>
-  <%= @super_hero.address %>
-</h3>
-<h3>
-  <%= @super_hero.price %>
-</h3>
-<h3>
-  <%= @super_hero.picture %>
-</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="card-body">
+            <h5 class="card-title"><%= @super_hero.name %></h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <br>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">💶 €<%= @super_hero.price %></li>
+              <li class="list-group-item">🏠 <%= @super_hero.address%></li>
+              <li class="list-group-item">⚡️ Power</li>
+              <br>
+            </ul>
 
-<%= simple_form_for [:my, @super_hero, @booking] do |f| %>
-  <%= f.input :starts_at, as: :datetime %>
-  <%= f.input :ends_at, as: :datetime %>
-  <%= f.submit "Book now", class: "btn btn-primary" %>
-<% end %>
+      <div class="profil">
+        <div class="d-flex justify-content-center ">
+          <div class="image_outer_container">
+            <div class="image_inner_container">
+            <img src="https://kitt.lewagon.com/placeholder/users/random">
+            </div>
+          </div>
+              <div class="description">
+              <h5 style="">Name of the superhero owner</h5>
+              </div>
+        </div>
 
-<%= link_to "back to list", root_path, class: "btn btn-primary" %>
+      </div>
+
+
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <img src="https://avatars.mds.yandex.net/get-pdb/1340633/978d1152-8d95-494d-8915-c14c698fb6ae/orig" alt="..." class="img-thumbnail" style="margin-top: 30px;">
+    </div>
+  </div>
+
+ <br>
+    <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
+      <%= f.input :starts_at, as: :datetime %>
+      <%= f.input :ends_at, as: :datetime %>
+      <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
+    <% end %>
+ <br>
+  <%= link_to "Back to list", root_path, class: "btn btn btn btn-light btn-block"%>
+  <br>
+
+
+
+
+</div>
