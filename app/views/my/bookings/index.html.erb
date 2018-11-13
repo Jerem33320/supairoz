@@ -1,0 +1,19 @@
+<h1 class="text-center">Book YOUR SuperHero</h1>
+
+<div class="container">
+  <div class="row">
+    <ul>
+      <% @bookings.each do |booking| %>
+        <div class="col-xs-12 col-sm-4">
+          <li>
+            <%= booking.starts_at %>
+          </li>
+          <li>
+            <%= booking.ends_at %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+
+  </div>
+</div>s
