@@ -1,19 +1,19 @@
-<h1 class="text-center">Book YOUR SuperHero</h1>
+<h1 class="text-center">Your booking</h1>
 
 <div class="container">
   <div class="row">
-    <ul>
-      <% @bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-4">
-          <li>
-            <%= booking.starts_at %>
-          </li>
-          <li>
-            <%= booking.ends_at %>
-          </li>
+
+    <% @bookings.each do |booking| %>
+      <%= link_to my_booking_path(booking.id) do %>
+        <div class="col-sm-4">
+          <div class="booking_card">
+            <h4><%= booking.super_hero.name %></h4>
+            <p><%= booking.starts_at %></p>
+            <p><%= booking.ends_at %></p>
+          </div>
         </div>
       <% end %>
-    </ul>
+    <% end %>
 
   </div>
-</div>s
+</div>

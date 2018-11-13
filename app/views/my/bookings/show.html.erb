@@ -1,4 +1,8 @@
-<h2>Booking number : <%= @booking.id %></h2>
+<h2 class="text-center">Booking number : <%= @booking.id %></h2>
+<div class="container text-center">
+  <h4><%= @booking.super_hero.name %></h4>
+  <p><%= @booking.starts_at %></p>
+  <p><%= @booking.ends_at %></p>
 
-<p><%= @booking.starts_at %></p>
-<p><%= @booking.ends_at %></p>
+  <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
+</div>
