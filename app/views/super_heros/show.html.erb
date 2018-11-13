@@ -36,7 +36,11 @@
   </div>
 
  <br>
-<%= link_to "Book this superhero !", root_path, class: "btn btn-danger btn-block"%>
+    <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
+      <%= f.input :starts_at, as: :datetime %>
+      <%= f.input :ends_at, as: :datetime %>
+      <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
+    <% end %>
  <br>
   <%= link_to "Back to list", root_path, class: "btn btn btn btn-light btn-block"%>
   <br>
@@ -45,6 +49,3 @@
 
 
 </div>
-
-
-
