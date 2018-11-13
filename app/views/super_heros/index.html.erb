@@ -22,7 +22,10 @@
           <ul class="list-group list-group-flush">
             <li class="list-group-item">💶 €<%= super_hero.price %></li>
             <li class="list-group-item">🏠 <%= super_hero.address%></li>
-            <li class="list-group-item">⚡️ Power</li>
+            <li class="list-group-item">⚡️ <% super_hero.powers.each do |power| %>
+              <%= power.name %>
+              <% end %>
+            </li>
             <br>
           </ul>
           <a><%= link_to 'Show', super_hero, class: 'btn btn-light btn-block'%></a>

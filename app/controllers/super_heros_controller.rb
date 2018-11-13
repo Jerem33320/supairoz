@@ -15,6 +15,7 @@ class SuperHerosController < ApplicationController
 
   def create
     @super_hero = SuperHero.new(super_hero_params)
+    @super_hero.user = current_user
     if @super_hero.save
       redirect_to super_hero_path(@super_hero)
     else
@@ -38,7 +39,7 @@ class SuperHerosController < ApplicationController
   private
 
   def super_hero_params
-    params.require(:super_hero).permit(:name, :address, :picture, :price)
+    params.require(:super_hero).permit(:name, :address, :picture, :price, power_ids: [])
   end
 
   def set_super_hero
