@@ -8,18 +8,15 @@ class My::BookingsController < ApplicationController
   def show
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
-    @super_hero = SuperHero.find(params[:id])
+    @super_hero = SuperHero.find(params[:super_hero_id])
     @booking.super_hero = @super_hero
+    @booking.user = current_user
     if @booking.save
       redirect_to root_path(@booking)
     else
-      render :new
+      render "super_heros/show"
     end
   end
 
@@ -40,7 +37,6 @@ class My::BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:starts_at, :ends_at)
-    ends
   end
 
   def set_booking
