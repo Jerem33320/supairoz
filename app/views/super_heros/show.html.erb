@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-6">
       <div class="card-body">
-            <h5 class="card-title"><%= @super_hero.name %></h5>
+            <h1 class="card-title"><%= @super_hero.name %></h1>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <br>
             <ul class="list-group list-group-flush">
@@ -35,6 +35,13 @@
     </div>
   </div>
 
+<br>
+<br>
+<br>
+<br>
+
+
+<h1>Book a superhero:</h1>
  <br>
     <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
       <%= f.input :starts_at, as: :datetime %>
@@ -45,7 +52,16 @@
   <%= link_to "Back to list", root_path, class: "btn btn btn btn-light btn-block"%>
   <br>
 
+<br>
+<br>
+<br>
+<br>
 
+
+   <%= render 'shared/review' %>
+
+<br>
+<br>
 
 
 </div>
