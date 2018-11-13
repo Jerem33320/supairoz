@@ -10,4 +10,11 @@
 <h3>
   <%= @super_hero.picture %>
 </h3>
+
+<%= simple_form_for [@super_hero, @booking] do |f| %>
+  <%= f.input :starts_at, as: :datetime %>
+  <%= f.input :finish_at, as: :datetime %>
+  <%= f.submit "Book now", class: "btn btn-primary" %>
+<% end %>
+
 <%= link_to "back to list", root_path, class: "btn btn-primary" %>
