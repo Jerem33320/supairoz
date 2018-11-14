@@ -1,9 +1,27 @@
+<div class="container">
+  <div class="row">
+      <div class="col-xs-6">
+        <div class="card-body">
+              <h1 class="card-title">Booking number :<%= @booking.id %></h1>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <br>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><%= @booking.super_hero.name %></li>
+                <li class="list-group-item"><%= @booking.starts_at %></li>
+                <li class="list-group-item"><%= @booking.ends_at %></li>
+                <br>
+              </ul>
+              <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
+        </div>
+      </div>
 
-<div class="container text-center">
-  <h2>Booking number :<%= @booking.id %></h2>
-  <h4><%= @booking.super_hero.name %></h4>
-  <p><%= @booking.starts_at %></p>
-  <p><%= @booking.ends_at %></p>
-
-  <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
+      <div class="col-xs-6">
+        <img src="https://image.shutterstock.com/image-illustration/superheroes-shaking-hands-great-show-260nw-24518008.jpg" alt="..." class="img-thumbnail" style="margin-top: 30px;">
+    </div>
+  </div>
 </div>
+
+
+
+
+
