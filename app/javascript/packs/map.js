@@ -38,3 +38,10 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     accessToken: mapboxgl.accessToken
   }));
 }
+
+const addressInput = document.getElementById('super_hero_address');
+
+if (addressInput) {
+  const places = require('places.js');
+   const placesAutocomplete = places({ container: addressInput });
+}
