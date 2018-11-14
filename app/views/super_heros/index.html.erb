@@ -20,7 +20,7 @@
     <% @super_heros.each do |super_hero| %>
     <div class="col-md-4 col-sm-6">
       <div class="card" style="">
-        <%= link_to image_tag("https://images-na.ssl-images-amazon.com/images/G/01/digital/video/hero/Movies/2004/B001NAT07A_Catwoman_UXWB1._V142637731_RI_SX940_.jpg", :class => 'card-img-top'), super_hero %>
+        <%= link_to cl_image_tag(super_hero.photo, :class => 'card-img-top'), super_hero %>
 
 
         <div class="card-body">
