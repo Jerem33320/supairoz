@@ -16,9 +16,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem "geocoder"
+
 gem 'faker'
 
 gem 'devise'
+
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'rest-client'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

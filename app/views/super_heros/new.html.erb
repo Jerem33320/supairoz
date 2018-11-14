@@ -1,9 +1,13 @@
 <div class="container">
   <%= simple_form_for @super_hero do |f| %>
+    <%= @super_hero.errors.full_messages.join(', ') %>
     <%= f.input :name %>
     <%= f.input :address %>
-    <%= f.input :picture %>
     <%= f.input :price, :collection => (1..100).to_a %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.association :powers %>
+    <%= f.association :powers %>
     <%= f.button :submit %>
   <% end %>
   <%= link_to "back to Super Heroes list", root_path, class: 'btn btn-primary' %>
