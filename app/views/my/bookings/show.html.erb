@@ -12,6 +12,7 @@
                 <br>
               </ul>
               <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
+              <%= link_to "Delete", my_booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
         </div>
       </div>
 
@@ -21,14 +22,14 @@
   </div>
 
 
-  
+
 </div>
 
   <h2>Add a review</h2>
   <%= simple_form_for([:my, @booking], method: :patch) do |f| %>
     <%= f.input :review %>
     <%= f.submit "add a review", class: "btn btn-primary"%>
-  <% end %>  
+  <% end %>
 
 
 
