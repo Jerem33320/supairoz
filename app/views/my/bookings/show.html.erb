@@ -12,6 +12,7 @@
                 <br>
               </ul>
               <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
+              <%= link_to "Delete", my_booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
         </div>
       </div>
 
@@ -22,6 +23,8 @@
 
   <br>
   <br>
+</div>
+
 
   <h2>Add a review</h2>
   <%= simple_form_for([:my, @booking], method: :patch) do |f| %>
@@ -32,7 +35,6 @@
   <%= link_to "View superhero profil", super_hero_path(@booking.super_hero), class: 'btn btn-light btn-block' %>
 
 </div>
-
 
 
 
