@@ -1,5 +1,5 @@
 class My::BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -29,8 +29,8 @@ class My::BookingsController < ApplicationController
   end
 
   def destroy
-    @booking.canceled_at = Date.today
-    redirect_to root_path
+    @booking.destroy
+    redirect_to my_bookings_path
   end
 
   private
