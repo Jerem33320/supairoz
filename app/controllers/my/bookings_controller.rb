@@ -14,7 +14,7 @@ class My::BookingsController < ApplicationController
     @booking.super_hero = @super_hero
     @booking.user = current_user
     if @booking.save
-      redirect_to root_path(@booking)
+      redirect_to my_bookings_path(@booking)
     else
       render "super_heros/show"
     end
@@ -36,7 +36,7 @@ class My::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:starts_at, :ends_at)
+    params.require(:booking).permit(:starts_at, :ends_at, :review)
   end
 
   def set_booking

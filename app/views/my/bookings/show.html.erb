@@ -19,9 +19,16 @@
         <img src="https://image.shutterstock.com/image-illustration/superheroes-shaking-hands-great-show-260nw-24518008.jpg" alt="..." class="img-thumbnail" style="margin-top: 30px;">
     </div>
   </div>
+
+
+  
 </div>
 
-
+  <h2>Add a review</h2>
+  <%= simple_form_for([:my, @booking], method: :patch) do |f| %>
+    <%= f.input :review %>
+    <%= f.submit "add a review", class: "btn btn-primary"%>
+  <% end %>  
 
 
 
