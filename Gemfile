@@ -20,8 +20,9 @@ gem 'faker'
 
 gem 'devise'
 
+gem 'carrierwave'
 gem 'cloudinary'
-gem 'carrierwave', '~> 1.2'
+gem 'rest-client'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
