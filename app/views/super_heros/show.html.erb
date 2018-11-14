@@ -3,8 +3,8 @@
     <div class="col-xs-6">
       <div class="card-body">
             <h1 class="card-title"><%= @super_hero.name %></h1>
-            <p><%= link_to "Delete", super_hero_path(@super_hero),method: :delete,data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%></p>
-            <p><%= link_to "Edit", edit_super_hero_path(@super_hero),class: 'btn btn-primary'%></p>
+            <p><%= link_to "Delete", super_hero_path(@super_hero),method: :delete,data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%>
+            <%= link_to "Edit", edit_super_hero_path(@super_hero),class: 'btn btn-primary'%></p>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <br>
             <ul class="list-group list-group-flush">
