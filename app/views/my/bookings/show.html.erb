@@ -6,4 +6,10 @@
   <p><%= @booking.ends_at %></p>
 
   <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
+
+  <h2>Add a review</h2>
+  <%= simple_form_for([:my, @booking], method: :patch) do |f| %>
+    <%= f.input :review %>
+    <%= f.submit "add a review", class: "btn btn-primary"%>
+  <% end %>
 </div>

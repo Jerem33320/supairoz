@@ -2,14 +2,13 @@
 
   <div class="media-body">
     <div class="well well-lg">
+      <% Booking.where(super_hero_id: @super_hero.id).each do |b| %>
+        <h4><%= User.find(b.user_id).first_name %> <%= User.find(b.user_id).last_name %></h4>
 
-      <h4>Marco </h4>
-
-      <p class="media-comment">
-        Great snippet! Thanks for sharing.
-      </p>
-      <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Add review</a>
-      <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+        <p class="media-comment">
+          <%= b.review %>
+        </p>
+      <% end %>
     </div>
   </div>
 
