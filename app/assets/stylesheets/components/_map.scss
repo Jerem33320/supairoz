@@ -7,4 +7,16 @@
   font-family: 'Open Sans', sans-serif;
   border-radius: 10%;
   opacity: 0.8;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.mapboxgl-popup-content a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+  text-decoration: none;
+  color: black;
+  }
 }
