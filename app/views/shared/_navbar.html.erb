@@ -17,7 +17,12 @@
       <li class="nav-item">
         <%= link_to 'Create a superhero', new_super_hero_path, class: 'nav-link' %>
       </li>
-
+      <li class="nav-item dropdown">
+        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-navbar rounded-circle dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>

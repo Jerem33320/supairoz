@@ -1,14 +1,19 @@
 class SuperHerosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_super_hero, only: [:show, :edit, :update, :destroy]
+
   def index
-    @super_heros = SuperHero.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @super_heros = SuperHero.where.not(latitude: nil, longitude: nil).search_by_name(params[:query])
+    else
+      @super_heros = SuperHero.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @super_heros.map do |super_hero|
       {
         lng: super_hero.longitude,
         lat: super_hero.latitude,
-        # infoWindow: { content: render_to_string(partial: "/super_heros/map_window", locals: { super_hero: super_hero }) }
+        infoWindow: { content: render_to_string(partial: "/super_heros/map_window", locals: { super_hero: super_hero }) }
 
       }
     end
