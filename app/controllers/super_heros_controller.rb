@@ -13,7 +13,7 @@ class SuperHerosController < ApplicationController
       {
         lng: super_hero.longitude,
         lat: super_hero.latitude,
-        # infoWindow: { content: render_to_string(partial: "/super_heros/map_window", locals: { super_hero: super_hero }) }
+        infoWindow: { content: render_to_string(partial: "/super_heros/map_window", locals: { super_hero: super_hero }) }
 
       }
     end
