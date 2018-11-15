@@ -7,8 +7,17 @@
               <br>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Booking number <%= @booking.id %></li>
-                <li class="list-group-item"><%= @booking.starts_at %></li>
-                <li class="list-group-item"><%= @booking.ends_at %></li>
+                <li class="list-group-item">
+                  Start: <%= @booking.starts_at.mday %>/<%= @booking.starts_at.mon %>/<%= @booking.starts_at.year %>
+                  at <%= @booking.starts_at.hour %>h<%= @booking.starts_at.min %>
+                </li>
+                <li class="list-group-item">
+                  End: <%= @booking.ends_at.mday %>/<%= @booking.ends_at.mon %>/<%= @booking.ends_at.year %>
+                  at <%= @booking.ends_at.hour %>h<%= @booking.ends_at.min %>
+                </li>
+                <li class="list-group-item">
+                  <strong><%= ((@booking.ends_at - @booking.starts_at)/3600)*@booking.super_hero.price %>0€</strong>
+                </li>
                 <br>
               </ul>
               <%= link_to "Update your booking", edit_my_booking_path(@booking), class: 'btn btn-primary' %>
