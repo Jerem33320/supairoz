@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_11_15_144247) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +27,15 @@ ActiveRecord::Schema.define(version: 2018_11_15_144247) do
     t.datetime "updated_at", null: false
     t.index ["super_hero_id"], name: "index_bookings_on_super_hero_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "powers", force: :cascade do |t|
@@ -52,9 +60,9 @@ ActiveRecord::Schema.define(version: 2018_11_15_144247) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.index ["user_id"], name: "index_super_heros_on_user_id"
   end
 
