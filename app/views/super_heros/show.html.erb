@@ -20,58 +20,34 @@
       <div class="profil">
         <div class="d-flex justify-content-center ">
           <div class="image_outer_container">
-            <div class="image_inner_container">
-            <img src="https://kitt.lewagon.com/placeholder/users/random">
+            <div class="image_inner_container img-fluid">
+              <img src="https://kitt.lewagon.com/placeholder/users/random">
             </div>
           </div>
-              <div class="description">
+            <div class="description">
               <h5 style="">Name of the superhero owner</h5>
-              </div>
+            </div>
+          </div>
         </div>
-
-      </div>
-
-
       </div>
     </div>
 
     <div class="col-xs-6">
-      <%= cl_image_tag @super_hero.photo, crop: :fill, class: "img-thumbnail", style: "margin-top: 30px;" %>
+        <%= cl_image_tag @super_hero.photo, crop: :fill, class: "img-thumbnail img-fluid", style: "margin-top: 30px;" %>
     </div>
   </div>
 
-<br>
-<br>
-<br>
-<br>
-
-
-<h1>Book a superhero:</h1>
- <br>
-    <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
-      <%= f.input :starts_at, as: :datetime %>
-      <%= f.input :ends_at, as: :datetime %>
-      <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
-    <% end %>
- <br>
-  <%= link_to "Back to list", root_path, class: "btn btn btn btn-light btn-block"%>
-  <br>
-
-<br>
-<br>
-<br>
-<br>
-
+  <div class="booker">
+    <h1>Book a superhero:</h1>
+        <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
+          <%= f.input :starts_at, as: :datetime %>
+          <%= f.input :ends_at, as: :datetime %>
+          <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
+        <% end %>
+        <br>
+      <%= link_to "Back to list", root_path, class: "btn btn btn btn-light btn-block"%>
+   </div>
 
    <%= render 'shared/review' %>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 </div>
