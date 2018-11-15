@@ -19,11 +19,8 @@
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.association :powers %>
             <%= f.association :powers %>
-            <%= f.button :submit %>
+            <p> <%= f.button :submit, class: 'btn btn-danger'%><%= link_to "Back to Super Heroes list", root_path, class: 'btn btn-light' %></p>
           <% end %>
-          <%= link_to "Back to Super Heroes list", root_path, class: 'btn btn-primary' %>
-            <br>
-            <br>
         </div>
     </div>
 </div>
