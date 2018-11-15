@@ -18,6 +18,8 @@ gem 'webpacker'
 
 gem "geocoder"
 
+gem 'pg_search'
+
 gem 'faker'
 
 gem 'devise'
