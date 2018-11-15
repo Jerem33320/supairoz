@@ -1,13 +1,15 @@
-<h1>Leave a review</h1>
+<h1>Reviews</h1>
 
   <div class="media-body">
     <div class="well well-lg">
-      <% Booking.where(super_hero_id: @super_hero.id).each do |b| %>
-        <h4><%= User.find(b.user_id).first_name %> <%= User.find(b.user_id).last_name %></h4>
+      <% Booking.where(super_hero_id: @super_hero.id).each do |booking| %>
+        <% if booking.review.present? %>
+          <h4><%= User.find(booking.user_id).first_name %> <%= User.find(booking.user_id).last_name %></h4>
 
-        <p class="media-comment">
-          <%= b.review %>
-        </p>
+          <p class="media-comment">
+            <%= booking.review %>
+          </p>
+        <% end %>
       <% end %>
     </div>
   </div>
