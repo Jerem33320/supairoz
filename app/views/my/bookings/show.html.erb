@@ -25,7 +25,7 @@
   <br>
 </div>
 
-
+<div class="container">
   <h2>Add a review</h2>
   <%= simple_form_for([:my, @booking], method: :patch) do |f| %>
     <%= f.input :review %>
@@ -33,9 +33,9 @@
   <% end %>
     <br>
   <%= link_to "View superhero profil", super_hero_path(@booking.super_hero), class: 'btn btn-light btn-block' %>
-
 </div>
-
+<br>
+<br>
 
 
 
