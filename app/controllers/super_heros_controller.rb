@@ -3,6 +3,7 @@ class SuperHerosController < ApplicationController
   before_action :set_super_hero, only: [:show, :edit, :update, :destroy]
 
   def index
+    @powers = Power.all
     if params[:query].present?
       @super_heros = SuperHero.where.not(latitude: nil, longitude: nil).search_by_name(params[:query])
     else
