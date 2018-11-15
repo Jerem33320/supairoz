@@ -13,7 +13,7 @@
           <%= simple_form_for @super_hero do |f| %>
             <%= @super_hero.errors.full_messages.join(', ') %>
             <%= f.input :name %>
-            <%= f.input :address %>
+            <%= f.input :address, input_html: {id: "auto_address"} %>
             <%= f.input :price, :collection => (1..100).to_a %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
