@@ -1,3 +1,5 @@
-<h1>Hello,</h1>
-<h2>Call me: <strong><%= super_hero.name %>!</strong></h2>
-<%= cl_image_tag super_hero.photo, crop: :fill, style: 'width: 54px; height: 54px; border-radius: 50%;' %>
+<%= link_to super_hero_path(super_hero.id) do %>
+  <h1>Hello,</h1>
+  <h2>Call me: <strong><%= super_hero.name %></strong>!</h2>
+  <%= cl_image_tag super_hero.photo, crop: :fill, style: 'width: 54px; height: 54px; border-radius: 50%;' %>
+<% end %>
