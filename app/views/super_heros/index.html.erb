@@ -1,6 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0) 0%, rgba(0, 36, 61, 0.19) 50%), url('https://hdqwalls.com/download/dc-cw-all-superheroes-gs-1920x1080.jpg');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0, 101, 168, 0) 0%, rgba(0, 36, 61, 0.19) 50%), url('https://hdqwalls.com/download/dc-cw-all-superheroes-gs-1920x1080.jpg');margin-bottom: 100px;">
   <div class="banner-content">
-    <h1>All our heroes</h1>
+    <h1>Sup Air Oz</h1>
+    <h2>Find the hero that you've been looking for</h2>
     <%= form_tag root_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -11,8 +12,7 @@
   </div>
 </div>
 
-<div class="container"
-  id="map"
+<div class="container" id="map"
   style="width: 100%;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
@@ -20,29 +20,51 @@
 
 <div class="container">
   <div class= "index-title">
+    <h1>All our Powers available</h1>
+  </div>
+<div id="f1_container">
+<div id="f1_card" class="shadow">
+  <div class="front face ">
+    <img src="https://cdn.pixabay.com/photo/2016/02/16/19/57/lightning-bolt-1203953_1280.png" style="width: 450px; height: 281px"/>
+  </div>
+  <div class="back face center">
+    <div style="overflow-y: scroll; height:270px;">>
+    <% @powers.each do |power| %>
+    <li class="list-group-item">⚡ <%= power.name %></li>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <div class= "index-title">
     <h1>All our Super Heroes</h1>
   </div>
 
-  <div class="card-group" style="margin-bottom: 100px">
-    <% @super_heros.each do |super_hero| %>
-    <div class="col-md-4 col-sm-6">
-      <div class="card" style="">
-        <%= link_to cl_image_tag(super_hero.photo, :class => 'card-img-top'), super_hero %>
-          <div class="card-body">
-            <h5 class="card-title"><%= super_hero.name %></h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">💶 €<%= super_hero.price %></li>
-              <li class="list-group-item">🏠 <%= super_hero.address%></li>
-              <% super_hero.powers.each do |power| %>
-                <li class="list-group-item">⚡ <%= power.name %></li>
-                <% end %>
-              <br>
-            </ul>
-            <a><%= link_to 'Show', super_hero, class: 'btn btn-light btn-block'%></a>
+    <div class="card-group" style="margin-bottom: 100px">
+      <% @super_heros.each do |super_hero| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="card" style="">
+          <%= link_to cl_image_tag(super_hero.photo, :class => 'card-img-top'), super_hero %>
+            <div class="card-body">
+              <h5 class="card-title"style="text-align: center"><%= super_hero.name %></h5>
+              <p class="card-text"style="text-align: center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">💶 €<%= super_hero.price %></li>
+                <li class="list-group-item">🏠 <%= super_hero.address%></li>
+                <% super_hero.powers.each do |power| %>
+                  <li class="list-group-item">⚡ <%= power.name %></li>
+                  <% end %>
+                <br>
+              </ul>
+              <a><%= link_to 'Show', super_hero, class: 'btn btn-light btn-block'%></a>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>
+
+
+

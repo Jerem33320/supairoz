@@ -1,35 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-6">
-      <div class="card-body">
-            <h1 class="card-title"><%= @super_hero.name %></h1>
-            <p><%= link_to "Delete", super_hero_path(@super_hero),method: :delete,data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%>
-            <%= link_to "Edit", edit_super_hero_path(@super_hero),class: 'btn btn-primary'%></p>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <br>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">💶 €<%= @super_hero.price %></li>
-              <li class="list-group-item">🏠 <%= @super_hero.address%></li>
-              <li class="list-group-item">⚡️ <% @super_hero.powers.each do |power| %>
-              <%= power.name %>
-              <% end %>
-              </li>
+        <div class="card-body">
+              <h1 class="card-title"><%= @super_hero.name %></h1>
+              <p><%= link_to "Delete", super_hero_path(@super_hero),method: :delete,data: { confirm: "Are you sure?" }, class: 'btn btn-primary'%>
+              <%= link_to "Edit", edit_super_hero_path(@super_hero),class: 'btn btn-primary'%></p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <br>
-            </ul>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">💶 €<%= @super_hero.price %></li>
+                <li class="list-group-item">🏠 <%= @super_hero.address%></li>
+                <li class="list-group-item">⚡️ <% @super_hero.powers.each do |power| %>
+                <%= power.name %>
+                <% end %>
+                </li>
+                <br>
+              </ul>
 
-      <div class="profil">
-        <div class="d-flex justify-content-center ">
-          <div class="image_outer_container">
-            <div class="image_inner_container img-fluid">
-              <img src="https://kitt.lewagon.com/placeholder/users/random">
+        <div class="profil">
+          <div class="d-flex justify-content-center ">
+            <div class="image_outer_container">
+              <div class="image_inner_container img-fluid">
+                <img src="https://kitt.lewagon.com/placeholder/users/random">
+              </div>
             </div>
-          </div>
-            <div class="description">
-              <h5 style="">Name of the superhero owner</h5>
+              <div class="description">
+                <h5 style="">Name of the superhero owner</h5>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
 
     <div class="col-xs-6">
