@@ -37,16 +37,22 @@
     </div>
   </div>
 
-  <div class="booker">
-    <h1>Book a superhero:</h1>
-        <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
-          <%= f.input :starts_at, as: :datetime %>
-          <%= f.input :ends_at, as: :datetime %>
-          <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
-        <% end %>
-        <br>
-      <%= link_to "Back to list", root_path, class: "btn btn btn btn-light btn-block"%>
-   </div>
+  <div class="container">
+    <div class="booker">
+      <h1>Book a superhero:</h1>
+      <br>
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+          <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
+            <%= f.input :starts_at, as: :string, class: "form-control input-group-addon",input_html: { id: 'datetimepicker' }%>
+            <%= f.input :ends_at, as: :string, class: "form-control input-group-addon",input_html: { id: 'datetimepicker2' }%>
+            <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
+          <% end %>
+          </div>
+            <%= link_to "Back to list", root_path, class: "btn btn btn-light btn-block"%>
+          </div>
+        </div>
+      </div>
 
    <%= render 'shared/review' %>
 
