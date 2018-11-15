@@ -47,7 +47,7 @@
 
   <div class="card-group" style="margin-bottom: 100px">
     <% @super_heros.each do |super_hero| %>
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-6 zoom">
       <div class="card" style="">
         <%= link_to cl_image_tag(super_hero.photo, :class => 'card-img-top'), super_hero %>
           <div class="card-body">
