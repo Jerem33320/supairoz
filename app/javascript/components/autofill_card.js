@@ -37,6 +37,7 @@ function readURL(input) {
       document.querySelector('#super_hero_img').src = e.target.result
     }
     reader.readAsDataURL(input.files[0]);
+    document.querySelector('#super_hero_img').classList.remove('hidden')
   }
 };
 
