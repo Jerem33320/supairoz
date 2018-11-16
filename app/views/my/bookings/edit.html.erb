@@ -1,10 +1,12 @@
 <div class="container">
   <h2 class="text-center">Update your booking</h2>
-  <%= simple_form_for [:my, @booking] do |f| %>
-    <%= f.input :starts_at %>
-    <%= f.input :ends_at %>
-    <%= f.button :submit %>
-  <% end %>
-  <%= link_to "back to your booking", my_booking_path(@booking), class: 'btn btn-primary' %>
+
+  <div class="col-xs-4 col-xs-offset-4">
+    <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
+    <%= f.input :starts_at, as: :string, class: "form-control input-group-addon",input_html: { id: 'datetimepicker' }%>
+    <%= f.input :ends_at, as: :string, class: "form-control input-group-addon",input_html: { id: 'datetimepicker2' }%>
+    <%= link_to "back to your booking", my_booking_path(@booking), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
 
