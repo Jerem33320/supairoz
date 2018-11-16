@@ -22,20 +22,12 @@ class SuperHerosController < ApplicationController
 
   def show
     @booking = Booking.new
-    if params[:query].present?
-      @super_heros = SuperHero.where.not(latitude: nil, longitude: nil).search_by_name(params[:query])
-    else
-      @super_heros = SuperHero.where.not(latitude: nil, longitude: nil)
-    end
-
-    @markers = @super_heros.map do |super_hero|
-      {
-        lng: super_hero.longitude,
-        lat: super_hero.latitude,
-        infoWindow: { content: render_to_string(partial: "/super_heros/map_window", locals: { super_hero: super_hero }) }
-
-      }
-    end
+    @super_hero = SuperHero.find(params[:id])
+    @markers = [{
+      lng: @super_hero.longitude,
+      lat: @super_hero.latitude,
+      infoWindow: { content: render_to_string(partial: "/super_heros/map_window", locals: { super_hero: @super_hero }) }
+      }]
   end
 
   def new
