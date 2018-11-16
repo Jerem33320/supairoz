@@ -16,7 +16,7 @@
                   at <%= @booking.ends_at.hour %>h<%= @booking.ends_at.min %>
                 </li>
                 <li class="list-group-item">
-                  <strong><%= (((booking.ends_at - booking.starts_at)/3600)*booking.super_hero.price).round(2) %>€</strong>
+                  <strong><%= (((@booking.ends_at - @booking.starts_at)/3600)*@booking.super_hero.price).round(2) %>€</strong>
                 </li>
                 <br>
               </ul>
