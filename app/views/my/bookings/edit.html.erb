@@ -5,7 +5,8 @@
     <%= simple_form_for [:my, @super_hero, @booking] do |f| %>
     <%= f.input :starts_at, as: :string, class: "form-control input-group-addon",input_html: { id: 'datetimepicker' }%>
     <%= f.input :ends_at, as: :string, class: "form-control input-group-addon",input_html: { id: 'datetimepicker2' }%>
-    <%= link_to "back to your booking", my_booking_path(@booking), class: 'btn btn-primary' %>
+    <%= f.submit "Book this superhero!", class: "btn btn-danger btn-block" %>
+    <%= link_to "back to your booking", my_booking_path(@booking), class: 'btn btn-primary btn-block' %>
     <% end %>
   </div>
 </div>
